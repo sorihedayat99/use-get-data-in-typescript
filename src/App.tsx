@@ -5,14 +5,13 @@ import useApi from "./hooks/useApi";
 import {CommentApiData, PostApiData} from "./interfaces";
 
 function App() {
-    const getPostsApi:PostApiData = useApi(postsApi.getPosts);
-    const getCommentsApi:CommentApiData = useApi(commentsApi.getComments);
+    const getPostsApi: PostApiData = useApi(postsApi.getPosts);
+    const getCommentsApi: CommentApiData = useApi(commentsApi.getComments);
 
     useEffect(() => {
         getPostsApi.request();
         getCommentsApi.request();
     }, []);
-
     return (
         <div className="App">
             {/* Post List */}
